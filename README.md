@@ -268,7 +268,7 @@ render: function () {
 * `collection` {Backbone Collection} The instantiated collection we wish to render.
 * `itemViewClass` {View Constructor} The view constructor that will be instantiated for each model in the collection. This view will be instantiated with a reference to the model and collection and the item view's `render` method will be called with an object containing a reference to the containerElement as follows: `.render({containerEl: << element >>})`.
 * `containerEl` {Element} The element that should hold the collection of views.
-* `viewOptions` {Object} [optional] Additional options 
+* `viewOptions` {Object} [optional] Additional options
     * `viewOptions` {Object} Options object that will get passed to the `initialize` method of the individual item views.
     * `filter` {Function} [optional] Function that will be used to determine if a model should be rendered in this collection view. It will get called with a model and you simply return `true` or `false`.
     * `reverse` {Boolean} [optional] Convenience for reversing order in which the items are rendered.
@@ -422,7 +422,7 @@ Removes a view from the DOM, and calls `stopListening` to remove any bound event
 
 ### renderSubview `view.renderSubview(viewInstance, containerEl)`
 
-* viewInstance {Object} Any object with a `.remove()`, `.render()` and an `.el` property that is the DOM element for that view. Typically this is just an instantiated view. 
+* viewInstance {Object} Any object with a `.remove()`, `.render()` and an `.el` property that is the DOM element for that view. Typically this is just an instantiated view.
 * containerEl {Element | String | jQueryElement} This can either be an actual DOM element or a CSS selector string such as `.container`. If a string is passed human view runs `this.$("YOUR STRING")` to try to grab the element that should contain the sub view.
 
 This method is just sugar for the common use case of instantiating a view and putting in an element within the parent.
@@ -458,7 +458,7 @@ var view = AmpersandView.extend({
 
 You can declare subviews that you want to render within a view, much like you would bindings. Useful for cases where the data you need for a subview may not be available on first render. Also, simplifies cases wehre you have lots of subviews.
 
-When the parent view is removed the `remove` method of all subviews will be called as well. 
+When the parent view is removed the `remove` method of all subviews will be called as well.
 
 You declare them as follows:
 
@@ -492,7 +492,7 @@ module.exports = AmpersandView.extend({
 subview declarations consist of:
 
 * container {String} Selector that describes the element within the view that should hold the subview.
-* role {String} Alternate method for specifying a container element using its role name. Equivalent to `selector: '[role=some-role]'`.
+* role {String} Alternate method for specifying a container element using its role name. Equivalent to `container: '[role=some-role]'`.
 * constructor {ViewConstructor} Any [view conventions compliant](http://ampersandjs.com/learn/view-conventions) view constructor. It will be initialized with `{el: [Element grabbed from selector], parent: [reference to parent view instance]}`. So if you don't need to do any custom setup, you can just provide the constructor.
 * waitFor {String} String specifying they "key-path" (i.e. 'model.property') of the view that must be "truthy" before it should consider the subview ready.
 * prepareView {Function} Function that will be called once any `waitFor` condition is met. It will be called with the `this` context of the parent view and with the element that matches the selector as the argument. It should return an instantiated view instance.
@@ -536,13 +536,13 @@ You usually don't need to use this, but may wish to if you have multiple views a
 
 ## Test coverage?
 
-Why yes! So glad you asked :)  
+Why yes! So glad you asked :)
 
 Open `test/test.html` in a browser to run the QUnit tests.
 
 ## Like this?
 
-Follow [@HenrikJoreteg](http://twitter.com/henrikjoreteg) on twitter and check out my recently released book: [human javascript](http://humanjavascript.com) which includes a full explanation of this as well as a whole bunch of other stuff for building awesome single page apps. 
+Follow [@HenrikJoreteg](http://twitter.com/henrikjoreteg) on twitter and check out my recently released book: [human javascript](http://humanjavascript.com) which includes a full explanation of this as well as a whole bunch of other stuff for building awesome single page apps.
 
 ## license
 
